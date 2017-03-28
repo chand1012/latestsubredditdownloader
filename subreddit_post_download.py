@@ -27,8 +27,8 @@ for submission in reddit.subreddit(subreddit).hot(limit=limit):
     print(submission.url)    # Output: the URL the submission points to
                             # or the submission's URL if it's a self post
     subreddit_file = open('subreddit.txt', 'a')
-    subreddit.write(submission.title)
-    subreddit.write(submission.score)
-    subreddit.write(submission.id)
-    subreddit.write(submission.url)
+    subreddit_file.write("{}\n".format(str(submission.title)))
+    subreddit_file.write("{}\n".format(str(submission.score)))
+    subreddit_file.write("{}\n".format(str(submission.id)))
+    subreddit_file.write("{}\n".format(str(submission.url)))
     subreddit_file.close()
